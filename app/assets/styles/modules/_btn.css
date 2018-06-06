@@ -1,0 +1,13 @@
+.btn {
+  background-color: $darkBlue;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  margin-right: 2rem;
+  display: inline-block;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+}

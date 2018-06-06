@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+red:      #FF0000	(255, 0, 0)
+          #FF8000	(255, 128, 0)
+yellow:   #FFFF00	(255, 255, 0)
+          #80FF00	(128, 255, 0)
+green:    #00FF00	(0, 255, 0)
+          #00FF80	(0, 255, 128)
+cyan:     #00FFFF	(0, 255, 255)
+          #0080FF	(0, 128, 255)
+blue:     #0000FF	(0, 0, 255)
+          #8000FF	(128, 0, 255)
+magenta:  #FF00FF	(255, 0, 255)
+          #FF0080	(255, 0, 128)
+
+Scheme (light to dark)
+#DDE3FD	(221, 227, 253)
+#798EF6
+#183BF0
+#0A2299
+#091034 (9, 16, 52)
+-->
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matching Game</title>
+  <link rel="stylesheet" type="text/css" href="./temp/styles/styles.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>Matching Game</header>
+
+    <div class="wrapper wrapper--no-padding">
+      <div class="sidebar" id="stats">
+        <div>
+          <p class="sidebar__header">Current</p>
+          <p><span class="sidebar__tag">Total # of tiles</span></td><td><span class="sidebar__stat" id="numTiles"></span></p>
+          <p><span class="sidebar__tag">Solved # of tiles</span><span class="sidebar__stat" id="numSolved"></span></p>
+          <p><span class="sidebar__tag">Unsolved # of tiles</span><span class="sidebar__stat" id="numUnsolved"></span></p>
+          <p><span class="sidebar__tag"># of clicks</span><span class="sidebar__stat" id="numClicks"></span></p>
+          <p><span class="sidebar__tag">Game timer</span><span class="sidebar__stat" id="gameClock"></span></p>
+        </div>
+        <div>
+          <p class="sidebar__header">Totals</p>
+          <p><span class="sidebar__tag">Total # of games</span></td><td><span class="sidebar__stat" id="totGames"></span></p>
+          <p><span class="sidebar__tag">Best game # of clicks</span><span class="sidebar__stat" id="bestClicks"></span></p>
+          <p><span class="sidebar__tag">Best time</span><span class="sidebar__stat" id="bestTime"></span></p>
+        </div>
+        <div class="sidebar__header"><a class="btn" id="btnNewGame" href="#">New Game</a></div>
+      </div>
+
+      <div class="game-grid"></div>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal__content">
+        <span class="modal__close">&times;</span>
+        <p>Congratulations!</p>
+        <p>Do you want to play a new game?</p>
+        <div>
+          <a class="btn" href="#" id="btnYes">Yes</a>
+          <a class="btn" href="#" id="btnNo">No</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <script type="text/javascript" src="/temp/scripts/App.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+.game-grid {
+  /*display: block;*/
+  width: 75%;
+  overflow: hidden;
+  border: solid 1px $darkBlue;
+	background-color: $lightBlue;
+	margin-right: 0;
+	padding: .5vw;
+	margin: 0;
+
+
+	&__item {
+		float: left;
+		width: 15%;
+		height: 7vw;
+		margin: 1% .8% 1%;
+		border: 1px solid rgba(0, 0, 0, .8);
+		padding: 1vw;
+		font-size: 1vw;
+		text-align: center;
+    color: $darkBlue;
+
+    &--face-down {
+      /* rotate smoothly (linear time), but use cubic-bezier to change background-color at midpoint */
+      /* http://www.roblaplaca.com/examples/bezierBuilder/ */
+      transition: transform .5s linear, background-color .5s cubic-bezier(1, 0, 0, 1);
+
+      /* default to face down */
+      transform: rotateY(180deg);
+      background-color: $darkBlue;
+    }
+
+		&:hover {
+  		border: solid 1px lightgray;
+		}
+
+
+		& p {
+ 			visibility: hidden;
+      /* use cubic-bezier to change visibility at midpoint */
+      transition: visibility .5s cubic-bezier(1, 0, 0, 1);
+ 		}
+
+		&--face-up {
+      transform: rotateY(0deg);
+      /* rotate smoothly (linear time), but use cubic-bezier to change background-color at midpoint */
+      /* http://www.roblaplaca.com/examples/bezierBuilder/ */
+      transition: transform .5s linear, background-color .5s cubic-bezier(1, 0, 0, 1);
+
+			background-color: $lightest;
+			& p {
+        visibility: visible;
+			}
+		}
+
+		&--matched {
+	 		visibility: hidden;
+      & p {
+        /* override cubic-bezier transition and make text immediately disappear - opprtunity for future improvement */
+        transition: all .1s step-start; 
+      }
+		}
+
+	}
+
+  @mixin clearfix;
+
+}
