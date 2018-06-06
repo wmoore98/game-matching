@@ -18,7 +18,8 @@ gulp.task("previewDist", function() {
 	});
 });
 
-gulp.task("deleteDistFolder", ["icons"], function(){
+// gulp.task("deleteDistFolder", ["icons"], function(){
+gulp.task("deleteDistFolder", function(){
  	return del("./" + distName);
  });
 
@@ -58,5 +59,6 @@ gulp.task("usemin", ["styles", "scripts"], function() {
 		}))
 		.pipe(gulp.dest("./" + distName));
 });
+
 
 gulp.task("build", ["deleteDistFolder", "copyGeneralFiles", "optimizeImages", "useminTrigger"]);

@@ -175,10 +175,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var GameSounds = function GameSounds() {
 	_classCallCheck(this, GameSounds);
 
-	this.startSnd = new Audio("../../assets/sounds/start.wav");
-	this.swishSnd = new Audio("../../assets/sounds/whoosh.wav");
-	this.beepSnd = new Audio("../../assets/sounds/beep.wav");
-	this.tadaSnd = new Audio("../../assets/sounds/tada.wav");
+	this.startSnd = new Audio("/assets/sounds/start.wav");
+	this.swishSnd = new Audio("/assets/sounds/whoosh.wav");
+	this.beepSnd = new Audio("/assets/sounds/beep.wav");
+	this.tadaSnd = new Audio("/assets/sounds/tada.wav");
 };
 
 exports.default = GameSounds;
