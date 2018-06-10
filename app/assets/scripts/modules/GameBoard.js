@@ -10,7 +10,23 @@ class GameBoard {
 		this.gameGrid = document.querySelector(".game-grid");
 		this.items = {};  //DOM elements of the tiles
 		this.initBoard();
+
+    this.events();
+
 	}
+
+  events() {
+    this.gameGrid.addEventListener("click", (e) => {
+      if (e.target.classList.contains("game-grid__item")) {
+        this.tiles.some((tile) => {
+          if (tile.domElem === e.target) {
+            this.handleTileClick(tile);
+            return true;
+          }
+        });
+      }
+    });
+  }
 
 	initBoard() {
 		const itemsArr = [

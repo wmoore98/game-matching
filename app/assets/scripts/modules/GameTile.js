@@ -6,12 +6,12 @@ class GameTile {
 		this.isSolved = false;
     this.isRotating = false;
 
-		this.events();
+		// this.events();
 	}
 
-	events() {
-		this.domElem.addEventListener("click", this.board.handleTileClick.bind(this.board, this));
-	}
+	// events() {
+	// 	this.domElem.addEventListener("click", this.board.handleTileClick.bind(this.board, this));
+	// }
 
   isFaceUp() {
     return this.domElem.classList.contains("game-grid__item--face-up");

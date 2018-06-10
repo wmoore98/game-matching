@@ -290,9 +290,27 @@ var GameBoard = function () {
     this.gameGrid = document.querySelector(".game-grid");
     this.items = {}; //DOM elements of the tiles
     this.initBoard();
+
+    this.events();
   }
 
   _createClass(GameBoard, [{
+    key: "events",
+    value: function events() {
+      var _this = this;
+
+      this.gameGrid.addEventListener("click", function (e) {
+        if (e.target.classList.contains("game-grid__item")) {
+          _this.tiles.some(function (tile) {
+            if (tile.domElem === e.target) {
+              _this.handleTileClick(tile);
+              return true;
+            }
+          });
+        }
+      });
+    }
+  }, {
     key: "initBoard",
     value: function initBoard() {
       var itemsArr = ["Love", "Joy", "Peace", "Patience", "Kindness", "Goodness", "Faithfulness", "Gentleness", "Self-control"];
@@ -440,15 +458,14 @@ var GameTile = function () {
     this.isSolved = false;
     this.isRotating = false;
 
-    this.events();
+    // this.events();
   }
 
+  // events() {
+  // 	this.domElem.addEventListener("click", this.board.handleTileClick.bind(this.board, this));
+  // }
+
   _createClass(GameTile, [{
-    key: "events",
-    value: function events() {
-      this.domElem.addEventListener("click", this.board.handleTileClick.bind(this.board, this));
-    }
-  }, {
     key: "isFaceUp",
     value: function isFaceUp() {
       return this.domElem.classList.contains("game-grid__item--face-up");
